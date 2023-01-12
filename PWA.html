@@ -1,0 +1,217 @@
+<!-- <?php
+
+include('config.php');
+if (isset($_GET['sin'])) {
+    $username = $_GET['UserName'];
+    $email = $_GET['email'];
+    $password = $_GET['password'];
+   
+
+
+    $sql = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$email}'");
+    if (mysqli_num_rows($sql) > 0) {
+        echo "$email - This email already exist!";
+    }
+
+else{
+    $i_query = "SELECT * FROM users where id";
+    $query="INSERT INTO `users` ( `uname`, `email`, `pass`) VALUES ('$username', '$email', '$password')";
+    if (mysqli_query($conn, $query)) {
+
+            echo("DataInserted");
+
+      } else {
+        echo "Error: " . $query . "<br>" . mysqli_error($conn);
+      }
+
+    }
+}
+$json = file_get_contents('manifest.json');
+  
+// Decode the JSON file
+$json_data = json_decode($json,true);
+
+$check= mysqli_close($conn);
+if(!$check){
+    echo"Errror";
+}
+
+?> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link rel="manifest" href="manifest.json" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="VITConnect">    <title>NExtGen</title>
+</head>
+<body>
+     <!-- Navbar -->
+   <div class="navbar">
+        <div class="container flex">
+            <h1 class="nav">VITConnect</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li><a href="">About Us</a></li>
+                    <button class="btn btn-outline"><a href="login.php">Sign In</a></button>
+                </ul>
+            </nav>
+        </div>
+    </div>
+<!-- Showcase ---->
+<section class="showcase">
+    <div class="container grid">
+        <div class="showcase-text">
+            <h1>Helping Hands</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <a href="" class="btn btn-outline">Read more</a>
+            
+        </div>
+        <div class="showcase-form card">
+            <h2>Sign Up</h2>
+            <form method="get">
+                <div class="form-control">
+                    <input type="text" name="UserName" placeholder="User Name" required>
+                </div>
+                <div class="form-control">
+                    <input type="text" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-control">
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="form-control">
+                    <input type="password" name="rpassword" placeholder="Re-Enter Password" required>
+                </div>
+               
+                <input type="submit"name="sin" value="Signup" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<!-- Stast
+<section class="stats">
+    <div class="container">
+        <h3 class="stats-heading text-center my-1">
+            Welcome to the Best Platform for Building Web Apps.
+        </h3>
+        <div class="grid grid-3 text-center my-4">
+            <div>
+                <i class="fas fa-server fa-3x"></i>
+                <h3>10,345,543</h3>
+                <p class="text-secondary">Deployments</p>
+            </div>
+            <div>
+                <i class="fas fa-upload fa-3x"></i>
+                <h3>978 TB</h3>
+                <p class="text-secondary">Published</p>
+            </div>
+            <div>
+                <i class="fas fa-project-diagram fa-3x"></i>
+                <h3>2,433,565</h3>
+                <p class="text-secondary">Projects</p>
+            </div>
+        </div>
+
+    </div>
+</section> -->
+<!-- <section class="cli">
+    <div class="container grid">
+        <img src="images/cli.png" alt="">
+        <div class="card">
+            <p>Easy to Use, Cross platform CLI</p>
+        </div>
+        <div class="card">
+            <p>Deploy in Seconds</p>
+        </div>
+    </div>
+</section>
+<section class="cloud bg-primary my-2 py-2">
+    <div class="conatiner grid">
+        <div class="text-center">
+            <h2 class="lg">Extreme Cloud Hosting</h2>
+            <p class="lead my-1">Cloud Hosting like you've never seen. Fast, efficient, and reliable.</p>
+            <a href="features.html" class="btn btn-dark">Read More</a>
+        </div>
+        <img src="images/cloud.png" alt="">
+    </div>
+</section> -->
+<!-- Languages -->
+<section class="languages">
+    <h2 class="md text-center my-2">
+        Supported Languages
+    </h2>
+    <div class="container flex">
+        <div class="card">
+            <h4>BikeBuddy</h4>
+            <img src="https://img.icons8.com/external-others-pike-picture/100/null/external-Sportbike-Motorcycle-motorcycle-others-pike-picture.png"/>
+        </div>
+        <div class="card">
+            <h4>Python</h4>
+            <img src="images/logos/python.png" alt="">
+          </div>
+          <div class="card">
+            <h4>C#</h4>
+            <img src="images/logos/csharp.png" alt="">
+          </div>
+          <div class="card">
+            <h4>Ruby</h4>
+            <img src="images/logos/ruby.png" alt="">
+          </div>
+          <div class="card">
+            <h4>PHP</h4>
+            <img src="images/logos/php.png" alt="">
+          </div>
+         
+    </div>
+</section>
+
+<!--Footer-->
+<footer class="footer bg-dark my-5">
+    <div class="container grid grid-3">
+        <div>
+            <h2>NextGen</h2>
+            <p>Copyright &copy; 2021</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="features.html">Contact Us</a></li>
+                <li><a href="docs.html">About Us</a></li>
+            </ul>
+        </nav>
+       
+    </div>
+</footer>
+<script>
+    if ("serviceWorker" in navigator) {
+  // register service worker
+  navigator.serviceWorker.register("service-worker.js");
+}
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+</body>
+
+</html>
